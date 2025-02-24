@@ -9,14 +9,14 @@
 
 - [Стэк](https://github.com/Mariia-Valisheva/4lapy-auto-tests?tab=readme-ov-file#%D1%81%D1%82%D1%8D%D0%BA)
 - [Примеры автоматизированных тест-кейсов](https://github.com/Mariia-Valisheva/4lapy-auto-tests?tab=readme-ov-file#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%82%D0%B5%D1%81%D1%82-%D0%BA%D0%B5%D0%B9%D1%81%D0%BE%D0%B2)
-- [Сборка в Jenkins]()
-- [Запуск из терминала]()
-- [Allure отчет]()
-- [Уведомление в Telegram при помощи бота]()
-- [Примеры видео выполнения тестов на Selenoid]()
+- [Сборка в Jenkins](https://github.com/Mariia-Valisheva/4lapy-auto-tests?tab=readme-ov-file#%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B0-%D0%B2-jenkins)
+- [Команды для запуска сборки](https://github.com/Mariia-Valisheva/4lapy-auto-tests?tab=readme-ov-file#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-%D0%B8%D0%B7-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0)
+- [Allure отчет](https://github.com/Mariia-Valisheva/4lapy-auto-tests?tab=readme-ov-file#allure-%D0%BE%D1%82%D1%87%D0%B5%D1%82-%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D1%83%D0%B5%D1%82%D1%81%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B9-%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8)
+- [Уведомление в Telegram ](https://github.com/Mariia-Valisheva/4lapy-auto-tests?tab=readme-ov-file#%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-%D0%B2-%D1%82%D0%B5%D0%BB%D0%B5%D0%B3%D1%80%D0%B0%D0%BC-%D0%B1%D0%BE%D1%82-%D0%BF%D1%80%D0%B8%D0%B4%D0%B5%D1%82-%D0%BE%D1%82%D1%87%D0%B5%D1%82)
+- [Видео запуска теста](https://github.com/Mariia-Valisheva/4lapy-auto-tests?tab=readme-ov-file#%D0%B4%D0%BB%D1%8F-%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B3%D0%BE-%D1%82%D0%B5%D1%81%D1%82%D0%B0-%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D1%81%D1%8F-%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82-%D0%B8-%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE-%D1%81-%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%BE%D0%BC)
 
 
-:floppy_disk: ## Стэк:
+## :floppy_disk: Стэк:
 
 <p align="center">  
 <a href="https://www.jetbrains.com/idea/"><img src="src/test/resources/logos/IntelliJIDEAIcon.svg" width="50" height="50"  alt="IDEA"/></a>  
@@ -31,7 +31,7 @@
 <a href="https://www.jenkins.io/"><img src="src/test/resources/logos/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
 </p>
 
-## Примеры автоматизированных тест-кейсов:
+##  :computer: Примеры автоматизированных тест-кейсов:
 - [x] Проверка поиска по ключевому слову на главной странице
 
 - [x] Проверка поиска по каталогу
@@ -44,7 +44,7 @@
 
 - [x] Проверка возможности оформить заказ только авторизированным пользователям
 
-## Сборка в [Jenkins](https://jenkins.autotests.cloud/job/four-lapy-tests/):
+## :label: Сборка в [Jenkins](https://jenkins.autotests.cloud/job/four-lapy-tests/):
 
 ![Jenkins Screenshot](src/test/resources/jenkinsscreen.png)
 
@@ -74,15 +74,18 @@ gradle clean fourlapy_smoke
 -Dbrowser_size=1280x720
 ```
 
-## Allure [отчет](https://jenkins.autotests.cloud/job/four-lapy-tests/3/allure/) сформируется для каждой сборки:
+## :page_facing_up: Allure [отчет](https://jenkins.autotests.cloud/job/four-lapy-tests/3/allure/) сформируется для каждой сборки:
 
 **Основная информация:**
+
 ![Allure Screenshot](src/test/resources/allure1.png)
 
 **Тест-кейсы в сборке:**
+
 ![Allure Screenshot](src/test/resources/allure2.png)
 
 **Шаги для каждого тест-кейса, а также доп информация (скриншоты, видео, логи, page source):**
+
 ![Allure Screenshot](src/test/resources/allure3.png)
 
 ### После выполнения сборки в телеграм-бот придет отчет:
