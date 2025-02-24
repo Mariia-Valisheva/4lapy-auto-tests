@@ -21,7 +21,7 @@
 [<img src="src/test/resources/IntelliJIDEAIcon.svg" height="45"/>](https://www.jetbrains.com/idea/)
 [<img src="src/test/resources/javaLogo.png" height="45"/>](https://www.java.com/ru/)
 [<img src="src/test/resources/githubLogo.png" height="45"/>](https://github.com/)
-[<img src="src/test/resources/gradle.svg" height="45"/>](https://gradle.org/)
+[<img src="src/test/resources/Gradle.svg" height="45"/>](https://gradle.org/)
 [<img src="src/test/resources/selenideLogo.png" height="45"/>](https://selenide.org/)
 [<img src="src/test/resources/selenoidLogo.png" height="45"/>](https://aerokube.com/selenoid/)
 [<img src="src/test/resources/allurerepLogo.png" height="45"/>](https://allurereport.org/)
