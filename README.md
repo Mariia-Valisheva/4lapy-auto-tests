@@ -27,9 +27,12 @@
 <a href="https://selenide.org/"><img src="src/test/resources/logos/selenideLogo.png" width="50" height="50"  alt="Selenide"/></a>  
 <a href="https://aerokube.com/selenoid/"><img src="src/test/resources/logos/selenoidLogo.png" width="50" height="50"  alt="Selenoid"/></a>
 <a href="https://allurereport.org/"><img src="src/test/resources/logos/allurerepLogo.png" width="50" height="50"  alt="AllureReports"/></a>
-<a href="https://qameta.io/"><img src="src/test/resources/logos/alluretestopsLogo.png" width="50" height="50"  alt="Allure TestOps"/></a>   
 <a href="https://www.jenkins.io/"><img src="src/test/resources/logos/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
 </p>
+
+Тесты написаны на языке Java с использованием фреймворков Selenide и JUnit5 и системы сборки Gradle. 
+CI/CD проходит через Jenkins, тесты запускаются на Selenoid. Тестовая отчетность формируется в Allure Reports.
+
 
 ##  :computer: Примеры автоматизированных тест-кейсов:
 - [x] Проверка поиска по ключевому слову на главной странице
@@ -48,7 +51,7 @@
 
 ![Jenkins Screenshot](src/test/resources/jenkinsscreen.png)
 
-### Сборку можно собрать с параметрами: 
+**Сборку можно собрать с параметрами:** 
 
 * <code>BROWSER</code> – браузер для выполнения тестов. По-умолчанию:<code>chrome</code>
 * <code>BROWSER_SIZE</code> – размер окна браузера. По-умолчанию:<code>1440x932</code>
@@ -74,7 +77,7 @@ gradle clean fourlapy_smoke
 -Dbrowser_size=1280x720
 ```
 
-## :page_facing_up: Allure [отчет](https://jenkins.autotests.cloud/job/four-lapy-tests/3/allure/) сформируется для каждой сборки:
+## :page_facing_up: [Allure отчет](https://jenkins.autotests.cloud/job/four-lapy-tests/3/allure/) сформируется для каждой сборки:
 
 **Основная информация:**
 
@@ -89,11 +92,13 @@ gradle clean fourlapy_smoke
 ![Allure Screenshot](src/test/resources/allure3.png)
 
 ### После выполнения сборки в телеграм-бот придет отчет:
+
 <p align="center">
 <img title="Tg Report" src="src/test/resources/tg.png" width="850" height="650"  alt="screenshot">   
 </p>
 
 ### Для каждого теста сохранится скриншот и видео с результатом:
+
 ![Test Screenshot](src/test/resources/testscreen.png)
 
 <p align="center">
