@@ -79,7 +79,7 @@ public class FourLapyUiTests extends FourLapyUiTestBase {
     }
 
 
-    @DisplayName("Тест на поиск по табам")
+    @DisplayName("Тест на работу табов")
     @Order(3)
     @Test
     void searchByTabsTest() {
