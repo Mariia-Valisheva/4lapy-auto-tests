@@ -20,6 +20,7 @@ public class FourLapyUiTestBase {
 
     @BeforeAll
     static void configStartParams() {
+        Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://4lapy.ru/";
         Configuration.browserSize = System.getProperty("browser_size", "1440x932");
         Configuration.browser = System.getProperty("browser", "chrome");
