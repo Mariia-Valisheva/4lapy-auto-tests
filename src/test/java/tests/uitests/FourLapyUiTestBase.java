@@ -22,19 +22,19 @@ public class FourLapyUiTestBase {
     static void configStartParams() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://4lapy.ru/";
-        Configuration.browserSize = System.getProperty("browser_size", "1440x932");
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browser_version");
+//        Configuration.browserSize = System.getProperty("browser_size", "1440x932");
+//        Configuration.browser = System.getProperty("browser", "chrome");
+//        Configuration.browserVersion = System.getProperty("browser_version");browser_version
 
-        String SELENOID_HOST = System.getProperty("selenoid_host");
-        Configuration.remote = "https://user1:1234@" + SELENOID_HOST + "/wd/hub";
+//        String SELENOID_HOST = System.getProperty("selenoid_host");
+//        Configuration.remote = "https://user1:1234@" + SELENOID_HOST + "/wd/hub";
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+//                "enableVNC", true,
+//                "enableVideo", true
+//        ));
+//        Configuration.browserCapabilities = capabilities;
     }
 
     @Step("Открывается главная страница сайта Четыре Лапы")

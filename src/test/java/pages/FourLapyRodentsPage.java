@@ -5,12 +5,12 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
-public class FourLapySalesPage {
+public class FourLapyRodentsPage {
     private final SelenideElement
-            promotionPageTitle = $(".Promotions_title__BUZwd");
+            rodentsPageTitle = $(".Title_root__J7hHl");
 
-    public FourLapySalesPage checkPageTitle(String expectedTitle) {
-        promotionPageTitle.shouldHave(text(expectedTitle));
+    public FourLapyRodentsPage checkPageTitle(String expectedTitle) {
+        rodentsPageTitle.shouldHave(text(expectedTitle));
         return this;
     }
 }

@@ -19,6 +19,11 @@ public class FourLapyUiTests extends FourLapyUiTestBase {
     FourLapySalesPage salesPage = new FourLapySalesPage();
     FourLapyAuthMenuPage authMenuPage = new FourLapyAuthMenuPage();
     FourLapyGeneratedData generatedData = new FourLapyGeneratedData();
+    FourLapyCatsPage catsPage = new FourLapyCatsPage();
+    FourLapyDogsPage dogsPage = new FourLapyDogsPage();
+    FourLapyFishPage fishPage = new FourLapyFishPage();
+    FourLapyBirdsPage birdsPage = new FourLapyBirdsPage();
+    FourLapyRodentsPage rodentsPage = new FourLapyRodentsPage();
 
     @DisplayName("Тест на поиск по ключевому слову")
     @Order(1)
@@ -86,12 +91,62 @@ public class FourLapyUiTests extends FourLapyUiTestBase {
         step("Кликаем по табу 'акции'", () -> {
             mainPage
                     .closeLocationPopUp()
-                    .clickOnSales("акции");
+                    .clickOnTab("акции");
+
         });
 
         step("Проверяем заголовок страницы", () -> {
             salesPage
-                    .checkPageTitle("Акции и спецпредложения", 1);
+                    .checkPageTitle("Акции и спецпредложения");
+        });
+
+        step("Кликаем по табу 'кошки'", () -> {
+            mainPage
+                    .clickOnTab("кошки");
+        });
+
+        step("Проверяем заголовок страницы", () -> {
+            catsPage
+                    .checkPageTitle("Товары для кошек");
+        });
+
+        step("Кликаем по табу 'собаки'", () -> {
+            mainPage
+                    .clickOnTab("собаки");
+        });
+
+        step("Проверяем заголовок страницы", () -> {
+            dogsPage
+                    .checkPageTitle("Товары для собак");
+        });
+
+        step("Кликаем по табу 'рыбы'", () -> {
+            mainPage
+                    .clickOnTab("рыбы");
+        });
+
+        step("Проверяем заголовок страницы", () -> {
+            fishPage
+                    .checkPageTitle("Товары для аквариумистики");
+        });
+
+        step("Кликаем по табу 'грызуны'", () -> {
+            mainPage
+                    .clickOnTab("грызуны");
+        });
+
+        step("Проверяем заголовок страницы", () -> {
+            rodentsPage
+                    .checkPageTitle("Товары для грызунов и хорьков");
+        });
+
+        step("Кликаем по табу 'птицы'", () -> {
+            mainPage
+                    .clickOnTab("птицы");
+        });
+        step("Проверяем заголовок страницы", () -> {
+            birdsPage
+                    .checkPageTitle("Товары для птиц");
         });
     }
 

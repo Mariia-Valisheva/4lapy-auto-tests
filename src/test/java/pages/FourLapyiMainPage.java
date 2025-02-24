@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -16,8 +17,7 @@ public class FourLapyiMainPage {
             closeLocationPopUpMenu = $(".Popup_content__q59Dx").$(".ContentWrapper_close__gXjHF"),
             catalogBurgerMenu = $(".HeaderToggleCatalogBtn_catalogIcon__8VnVk"),
             secondMainCategoryInCatalog = $(".HeaderCatalog_categoryItem__0Mq_J", 1),
-            firstSubCategoryBlock = $(".HeaderCatalog_col__0K9Fl", 0),
-            tabsMenu = $(".TopCategoriesPanel_root__EMDNE");
+            firstSubCategoryBlock = $(".HeaderCatalog_col__0K9Fl", 0);
 
 
     public FourLapyiMainPage openPage() {
@@ -52,8 +52,8 @@ public class FourLapyiMainPage {
         return this;
     }
 
-    public FourLapyiMainPage clickOnSales(String expectedText) {
-        tabsMenu.$(byText(expectedText)).click();
+    public FourLapyiMainPage clickOnTab(String expectedText) {
+        $$(".TopCategoriesPanelMenu_listItem__imjYP").findBy(exactText(expectedText)).click();
         return this;
     }
 
