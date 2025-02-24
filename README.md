@@ -1,7 +1,7 @@
 # Проект с автотестами на Java для комании Четыре лапы
 ![Company Logo](src/test/resources/4lapyLogo.png)
 
->Четыре лапы - сеть зоомагазинов с разнообразными товарами для питомцев, а также онлайн и оффлайн петсервисы. 
+>Четыре лапы - сеть зоомагазинов с разнообразными товарами для питомцев, а также онлайн и оффлайн петсервисами. 
  
 Автотесты разработаны для [веб-сайта компании](https://4lapy.ru/) 
 
@@ -18,16 +18,18 @@
 
 ## Стэк:
 
-[<img src="src/test/resources/IntelliJIDEAIcon.svg" height="45"/>](https://www.jetbrains.com/idea/)
-[<img src="src/test/resources/javaLogo.png" height="45"/>](https://www.java.com/ru/)
-[<img src="src/test/resources/githubLogo.png" height="45"/>](https://github.com/)
-[<img src="src/test/resources/Gradle.svg" height="45"/>](https://gradle.org/)
-[<img src="src/test/resources/selenideLogo.png" height="45"/>](https://selenide.org/)
-[<img src="src/test/resources/selenoidLogo.png" height="45"/>](https://aerokube.com/selenoid/)
-[<img src="src/test/resources/allurerepLogo.png" height="45"/>](https://allurereport.org/)
-[<img src="src/test/resources/alluretestopsLogo.png" height="45"/>](https://qameta.io/)
-[<img src="src/test/resources/jenkins.svg" height="45"/>](https://www.jenkins.io/)
-
+<p align="center">  
+<a href="https://www.jetbrains.com/idea/"><img src="src/test/resources/IntelliJIDEAIcon.svg" width="50" height="50"  alt="IDEA"/></a>  
+<a href="https://www.java.com/"><img src="src/test/resources/javaLogo.png" width="50" height="50"  alt="Java"/></a>  
+<a href="https://github.com/"><img src="src/test/resources/githubLogo.png" width="50" height="50"  alt="Github"/></a>  
+<a href="https://junit.org/junit5/"><img src="src/test/resources/junit5Logo.png" width="50" height="50"  alt="JUnit 5"/></a>  
+<a href="https://gradle.org/"><img src="src/test/resources/Gradle.svg" width="50" height="50"  alt="Gradle"/></a>  
+<a href="https://selenide.org/"><img src="src/test/resources/selenideLogo.png" width="50" height="50"  alt="Selenide"/></a>  
+<a href="https://aerokube.com/selenoid/"><img src="src/test/resources/selenoidLogo.png" width="50" height="50"  alt="Selenoid"/></a>
+<a href="https://allurereport.org/"><img src="src/test/resources/allurerepLogo.png" width="50" height="50"  alt="AllureReports"/></a>
+<a href="https://qameta.io/"><img src="src/test/resources/alluretestopsLogo.png" width="50" height="50"  alt="Allure TestOps"/></a>   
+<a href="https://www.jenkins.io/"><img src="src/test/resources/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
+</p>
 
 ## Примеры автоматизированных тест-кейсов:
 - [x] Проверка поиска по ключевому слову на главной странице
