@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.byText;
@@ -20,30 +21,34 @@ public class FourLapyiMainPage {
             firstSubCategoryBlock = $(".HeaderCatalog_col__0K9Fl", 0);
 
 
+    @Step("Открываем главную страницу")
     public FourLapyiMainPage openPage() {
         open("");
         cookiePopUp.sibling(0).scrollTo().click();
         return this;
     }
 
+    @Step("Выполняем поиск по ключевому слову")
     public FourLapyiMainPage searchByKeyWord(String keyword) {
         searchInput.setValue(keyword);
         searchButton.click();
         return this;
     }
 
+    @Step("Кликаем на икнонку корзины на главной странице")
     public FourLapyiMainPage clickToCardIcon() {
         cardIcon.click();
         return this;
     }
 
+    @Step("Выбираем локацию в модальном окне")
     public FourLapyiMainPage closeLocationPopUp() {
         noLocationButton.click();
         closeLocationPopUpMenu.click();
         return this;
     }
 
-
+    @Step("Выполняем поиск по каталогу на главной странице")
     public FourLapyiMainPage searchInCatalog(String expectedText) {
         catalogBurgerMenu.click();
         actions().moveToElement(secondMainCategoryInCatalog).perform();
@@ -52,14 +57,15 @@ public class FourLapyiMainPage {
         return this;
     }
 
+    @Step("Кликаем на таб на главной странице")
     public FourLapyiMainPage clickOnTab(String expectedText) {
         $$(".TopCategoriesPanelMenu_listItem__imjYP").findBy(exactText(expectedText)).click();
         return this;
     }
 
+    @Step("Кликаем на иконку профиля на главной странице")
     public FourLapyiMainPage clickOnProfileIcon() {
         profileIcon.click();
         return this;
     }
-
 }

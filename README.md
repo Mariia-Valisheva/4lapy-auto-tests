@@ -1,5 +1,5 @@
 # Проект с автотестами на Java для комании Четыре лапы
-![Company Logo](src/test/resources/logos/4lapyLogo.png)
+![Company Logo](src/logos/4lapyLogo.png)
 
 >Четыре лапы - сеть зоомагазинов с разнообразными товарами для питомцев, а также онлайн и оффлайн петсервисами. 
  
@@ -19,15 +19,15 @@
 ## :floppy_disk: Стэк:
 
 <p align="center">  
-<a href="https://www.jetbrains.com/idea/"><img src="src/test/resources/logos/IntelliJIDEAIcon.svg" width="50" height="50"  alt="IDEA"/></a>  
-<a href="https://www.java.com/"><img src="src/test/resources/logos/javaLogo.png" width="50" height="50"  alt="Java"/></a>  
-<a href="https://github.com/"><img src="src/test/resources/logos/githubLogo.png" width="50" height="50"  alt="Github"/></a>  
-<a href="https://junit.org/junit5/"><img src="src/test/resources/logos/junit5Logo.png" width="50" height="50"  alt="JUnit 5"/></a>  
-<a href="https://gradle.org/"><img src="src/test/resources/logos/Gradle.svg" width="50" height="50"  alt="Gradle"/></a>  
-<a href="https://selenide.org/"><img src="src/test/resources/logos/selenideLogo.png" width="50" height="50"  alt="Selenide"/></a>  
-<a href="https://aerokube.com/selenoid/"><img src="src/test/resources/logos/selenoidLogo.png" width="50" height="50"  alt="Selenoid"/></a>
-<a href="https://allurereport.org/"><img src="src/test/resources/logos/allurerepLogo.png" width="50" height="50"  alt="AllureReports"/></a>
-<a href="https://www.jenkins.io/"><img src="src/test/resources/logos/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
+<a href="https://www.jetbrains.com/idea/"><img src="src/logos/IntelliJIDEAIcon.svg" width="50" height="50"  alt="IDEA"/></a>  
+<a href="https://www.java.com/"><img src="src/logos/javaLogo.png" width="50" height="50"  alt="Java"/></a>  
+<a href="https://github.com/"><img src="src/logos/githubLogo.png" width="50" height="50"  alt="Github"/></a>  
+<a href="https://junit.org/junit5/"><img src="src/logos/junit5Logo.png" width="50" height="50"  alt="JUnit 5"/></a>  
+<a href="https://gradle.org/"><img src="src/logos/Gradle.svg" width="50" height="50"  alt="Gradle"/></a>  
+<a href="https://selenide.org/"><img src="src/logos/selenideLogo.png" width="50" height="50"  alt="Selenide"/></a>  
+<a href="https://aerokube.com/selenoid/"><img src="src/logos/selenoidLogo.png" width="50" height="50"  alt="Selenoid"/></a>
+<a href="https://allurereport.org/"><img src="src/logos/allurerepLogo.png" width="50" height="50"  alt="AllureReports"/></a>
+<a href="https://www.jenkins.io/"><img src="src/logos/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
 </p>
 
 Тесты написаны на языке Java с использованием фреймворков Selenide и JUnit5 и системы сборки Gradle. 
@@ -49,7 +49,7 @@ CI/CD проходит через Jenkins, тесты запускаются н�
 
 ## :label: Сборка в [Jenkins](https://jenkins.autotests.cloud/job/four-lapy-tests/):
 
-![Jenkins Screenshot](src/test/resources/jenkinsscreen.png)
+![Jenkins Screenshot](src/screenshots/jenkinsscreen.png)
 
 **Сборку можно собрать с параметрами:** 
 
@@ -81,28 +81,28 @@ gradle clean fourlapy_smoke
 
 **Основная информация:**
 
-![Allure Screenshot](src/test/resources/allure1.png)
+![Allure Screenshot](src/screenshots/allure1.png)
 
 **Тест-кейсы в сборке:**
 
-![Allure Screenshot](src/test/resources/allure2.png)
+![Allure Screenshot](src/screenshots/allure2.png)
 
 **Шаги для каждого тест-кейса, а также доп информация (скриншоты, видео, логи, page source):**
 
-![Allure Screenshot](src/test/resources/allure3.png)
+![Allure Screenshot](src/screenshots/allure3.png)
 
 ### После выполнения сборки в телеграм-бот придет отчет:
 
 <p align="center">
-<img title="Tg Report" src="src/test/resources/tg.png" width="850" height="650"  alt="screenshot">   
+<img title="Tg Report" src="src/screenshots/tg.png" width="850" height="650"  alt="screenshot">   
 </p>
 
 ### Для каждого теста сохранится скриншот и видео с результатом:
 
-![Test Screenshot](src/test/resources/testscreen.png)
+![Test Screenshot](src/screenshots/testscreen.png)
 
 <p align="center">
-<img title="Selenoid Video" src="src/test/resources/testvideo.gif" width="850" height="650"  alt="video">   
+<img title="Selenoid Video" src="src/screenshots/testvideo.gif" width="850" height="650"  alt="video">   
 </p>
 
 
