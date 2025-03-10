@@ -9,14 +9,11 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.FourLapyiMainPage;
-
-import java.util.Map;
+import pages.MainPage;
 
 public class FourLapyUiTestBase {
 
-    FourLapyiMainPage mainPage = new FourLapyiMainPage();
+    MainPage mainPage = new MainPage();
 
     @BeforeAll
     static void configStartParams() {
@@ -25,16 +22,16 @@ public class FourLapyUiTestBase {
         Configuration.browserSize = System.getProperty("browser_size", "1440x932");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browser_version");
+        Configuration.holdBrowserOpen = true;
+        //String SELENOID_HOST = System.getProperty("selenoid_host");
+        //Configuration.remote = "https://user1:1234@" + SELENOID_HOST + "/wd/hub";
 
-        String SELENOID_HOST = System.getProperty("selenoid_host");
-        Configuration.remote = "https://user1:1234@" + SELENOID_HOST + "/wd/hub";
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+//                "enableVNC", true,
+//                "enableVideo", true
+//        ));
+//        Configuration.browserCapabilities = capabilities;
     }
 
     @Step("Открывается главная страница сайта Четыре Лапы")

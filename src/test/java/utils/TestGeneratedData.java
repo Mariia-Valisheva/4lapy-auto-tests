@@ -2,10 +2,11 @@ package utils;
 
 import com.github.javafaker.Faker;
 
-public class FourLapyGeneratedData {
+public class TestGeneratedData {
     Faker faker = new Faker();
     public String
             keyWord = faker.options().option("лежанка", "поводок", "туалет", "корм"),
+            searchWord = faker.options().option("Сухой корм", "Игрушки интерактивные", "Для лысых"),
             phoneNumberPrefix = faker.number().digits(3),
             phoneNumberThreeDigits = faker.number().digits(3),
             phoneNumberTwoDigits1 = faker.number().digits(2),

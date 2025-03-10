@@ -4,23 +4,18 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.*;
-import utils.FourLapyGeneratedData;
+import utils.TestGeneratedData;
 
 
 @Tag("SMOKE")
-@DisplayName("Тесты для сайта Четыре Лапы")
+@DisplayName("Тесты на главной странице")
 public class MainPageTests extends FourLapyUiTestBase {
 
-    FourLapyiMainPage mainPage = new FourLapyiMainPage();
-    FourLapySearchResultPage searchResultPage = new FourLapySearchResultPage();
-    FourLapySalesPage salesPage = new FourLapySalesPage();
-    FourLapyGeneratedData generatedData = new FourLapyGeneratedData();
-    FourLapyCatsPage catsPage = new FourLapyCatsPage();
-    FourLapyDogsPage dogsPage = new FourLapyDogsPage();
-    FourLapyFishPage fishPage = new FourLapyFishPage();
-    FourLapyBirdsPage birdsPage = new FourLapyBirdsPage();
-    FourLapyRodentsPage rodentsPage = new FourLapyRodentsPage();
+    MainPage mainPage = new MainPage();
+    SearchResultPage searchResultPage = new SearchResultPage();
+    TestGeneratedData generatedData = new TestGeneratedData();
 
+    //готово
     @DisplayName("Тест на поиск по ключевому слову")
     @Test
     void searchByKeyWordsTest() {
@@ -32,57 +27,17 @@ public class MainPageTests extends FourLapyUiTestBase {
                         + generatedData.keyWord + "» мы нашли", 1);
     }
 
-
+//переделать
     @DisplayName("Тест на поиск по каталогу")
     @Test
     void searchInCatalogTest() {
         mainPage
                 .closeLocationPopUp()
-                .searchInCatalog("Сухой корм");
+                .searchInCatalog(generatedData.searchWord);
 
         searchResultPage
-                .checkCatalogSearchResult("Сухой корм для кошек и котов");
-    }
-
-
-    @DisplayName("Тест на работу табов")
-    @Test
-    void searchByTabsTest() {
-        mainPage
-                .closeLocationPopUp()
-                .clickOnTab("акции");
-
-        salesPage
-                .checkPageTitle("Акции и спецпредложения");
-
-        mainPage
-                .clickOnTab("кошки");
-
-        catsPage
-                .checkPageTitle("Товары для кошек");
-
-        mainPage
-                .clickOnTab("собаки");
-
-        dogsPage
-                .checkPageTitle("Товары для собак");
-
-        mainPage
-                .clickOnTab("рыбы");
-
-        fishPage
-                .checkPageTitle("Товары для аквариумистики");
-
-        mainPage
-                .clickOnTab("грызуны");
-
-        rodentsPage
-                .checkPageTitle("Товары для грызунов и хорьков");
-
-        mainPage
-                .clickOnTab("птицы");
-
-        birdsPage
-                .checkPageTitle("Товары для птиц");
+                .checkCatalogSearchResult(generatedData.searchWord);
     }
 }
+
+

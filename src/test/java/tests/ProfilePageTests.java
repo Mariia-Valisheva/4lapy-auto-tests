@@ -3,17 +3,18 @@ package tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.FourLapyAuthMenuPage;
-import pages.FourLapyiMainPage;
-import utils.FourLapyGeneratedData;
+import pages.AuthMenuPage;
+import pages.MainPage;
+import utils.TestGeneratedData;
 
 
 @Tag("SMOKE")
+@DisplayName("Тестирование личного кабинета")
 public class ProfilePageTests extends FourLapyUiTestBase {
 
-    FourLapyiMainPage mainPage = new FourLapyiMainPage();
-    FourLapyAuthMenuPage authMenuPage = new FourLapyAuthMenuPage();
-    FourLapyGeneratedData generatedData = new FourLapyGeneratedData();
+    MainPage mainPage = new MainPage();
+    AuthMenuPage authMenuPage = new AuthMenuPage();
+    TestGeneratedData generatedData = new TestGeneratedData();
 
     @DisplayName("Тест на возможность зарегистрироваться с номером телефона")
     @Test
