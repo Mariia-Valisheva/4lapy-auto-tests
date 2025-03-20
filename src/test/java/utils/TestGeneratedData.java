@@ -7,6 +7,7 @@ public class TestGeneratedData {
     public String
             keyWord = faker.options().option("лежанка", "поводок", "туалет", "корм"),
             searchWord = faker.options().option("Сухой корм", "Игрушки интерактивные", "Для лысых"),
+            chooseCity = faker.options().option("Казань", "Кемерово", "Краснодар"),
             phoneNumberPrefix = faker.number().digits(3),
             phoneNumberThreeDigits = faker.number().digits(3),
             phoneNumberTwoDigits1 = faker.number().digits(2),

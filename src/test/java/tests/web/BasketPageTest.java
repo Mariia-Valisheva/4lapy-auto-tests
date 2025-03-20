@@ -1,4 +1,4 @@
-package tests;
+package tests.web;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -11,7 +11,7 @@ import utils.TestGeneratedData;
 
 @Tag("SMOKE")
 @DisplayName("Тестирование корзины")
-public class BasketPageTest extends FourLapyUiTestBase {
+public class BasketPageTest extends UiTestBase {
     MainPage mainPage = new MainPage();
     CardPage cardPage = new CardPage();
     SearchResultPage searchResultPage = new SearchResultPage();

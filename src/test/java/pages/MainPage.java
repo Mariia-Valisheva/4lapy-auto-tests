@@ -16,8 +16,7 @@ public class MainPage {
             noLocationButton = $(".LocationPopup_buttonGroup__XzgWa").$(".Button_root__pS5iJ", 1),
             closeLocationPopUpMenu = $(".Popup_content__q59Dx").$(".ContentWrapper_close__gXjHF"),
             catalogBurgerMenu = $(".HeaderToggleCatalogBtn_catalogIcon__8VnVk"),
-            secondMainCategoryInCatalog = $(".HeaderCatalog_categoryItem__0Mq_J", 1),
-            firstSubCategoryBlock = $(".HeaderCatalog_col__0K9Fl", 0);
+            secondMainCategoryInCatalog = $(".HeaderCatalog_categoryItem__0Mq_J", 1);
 
 
     @Step("Открываем главную страницу")

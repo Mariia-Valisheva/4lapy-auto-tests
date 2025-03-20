@@ -1,4 +1,4 @@
-package tests;
+package tests.web;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import pages.MainPage;
 
-public class FourLapyUiTestBase {
+public class UiTestBase {
 
     MainPage mainPage = new MainPage();
 

@@ -1,4 +1,4 @@
-package tests;
+package tests.web;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -9,11 +9,12 @@ import utils.TestGeneratedData;
 
 @Tag("SMOKE")
 @DisplayName("Тесты на главной странице")
-public class MainPageTests extends FourLapyUiTestBase {
+public class MainPageTests extends UiTestBase {
 
     MainPage mainPage = new MainPage();
     SearchResultPage searchResultPage = new SearchResultPage();
     TestGeneratedData generatedData = new TestGeneratedData();
+
 
     //готово
     @DisplayName("Тест на поиск по ключевому слову")
@@ -27,7 +28,7 @@ public class MainPageTests extends FourLapyUiTestBase {
                         + generatedData.keyWord + "» мы нашли", 1);
     }
 
-//переделать
+    //готово
     @DisplayName("Тест на поиск по каталогу")
     @Test
     void searchInCatalogTest() {
@@ -38,6 +39,18 @@ public class MainPageTests extends FourLapyUiTestBase {
         searchResultPage
                 .checkCatalogSearchResult(generatedData.searchWord);
     }
+
+    //готово
+    @DisplayName("Тест на выбор города на главной странице")
+    @Test
+    void chooseCityTest() {
+        CityPage cityPage = new CityPage();
+        cityPage
+                .clickOnYourCity()
+                .chooseRandomCity(generatedData.chooseCity)
+                .checkChosenCity(generatedData.chooseCity);
+    }
 }
+
 
 
