@@ -7,7 +7,7 @@ import pages.ProductCardPage;
 import utils.TestGeneratedData;
 
 
-public class ProductCardTest extends UiTestBase {
+public class ProductCardTest extends WebTestBase {
 
     MainPage mainPage = new MainPage();
     ProductCardPage productCardPage = new ProductCardPage();

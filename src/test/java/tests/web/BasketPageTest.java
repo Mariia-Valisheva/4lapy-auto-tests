@@ -11,7 +11,7 @@ import utils.TestGeneratedData;
 
 @Tag("SMOKE")
 @DisplayName("Тестирование корзины")
-public class BasketPageTest extends UiTestBase {
+public class BasketPageTest extends WebTestBase {
     MainPage mainPage = new MainPage();
     CardPage cardPage = new CardPage();
     SearchResultPage searchResultPage = new SearchResultPage();

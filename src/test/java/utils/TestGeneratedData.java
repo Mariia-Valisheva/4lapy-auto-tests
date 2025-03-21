@@ -11,5 +11,9 @@ public class TestGeneratedData {
             phoneNumberPrefix = faker.number().digits(3),
             phoneNumberThreeDigits = faker.number().digits(3),
             phoneNumberTwoDigits1 = faker.number().digits(2),
-            phoneNumberTwoDigits2 = faker.number().digits(2);
+            phoneNumberTwoDigits2 = faker.number().digits(2),
+
+            skuId = "1063633";
+
+
 }

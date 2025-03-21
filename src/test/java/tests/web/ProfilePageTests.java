@@ -10,7 +10,7 @@ import utils.TestGeneratedData;
 
 @Tag("SMOKE")
 @DisplayName("Тестирование личного кабинета")
-public class ProfilePageTests extends UiTestBase {
+public class ProfilePageTests extends WebTestBase {
 
     MainPage mainPage = new MainPage();
     AuthMenuPage authMenuPage = new AuthMenuPage();

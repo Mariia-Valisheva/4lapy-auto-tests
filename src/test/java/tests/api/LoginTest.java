@@ -1,8 +1,6 @@
 package tests.api;
 
-import api.AddToFav;
-import api.GetToken;
-import org.checkerframework.checker.units.qual.A;
+import api.GetAuthInfo;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -11,7 +9,7 @@ public class LoginTest {
 
     @Test
     void successfulLoginTest() {
-        GetToken getToken = new GetToken();
+        GetAuthInfo getToken = new GetAuthInfo();
         String accessToken = getToken.ResponseToken().getToken().getAccessToken();
         String refreshToken = getToken.ResponseToken().getToken().getRefreshToken();
         String sessionState = getToken.ResponseToken().getToken().getSessionState();
@@ -28,77 +26,6 @@ public class LoginTest {
                 .log().all()
                 .when()
                 .post("https://4lapy.ru/api/auth/authByEmail/")
-                .then()
-                .log().all()
-                .extract().body();
-    }
-
-
-    @Test
-    void getTokenTest() {
-
-        given()
-                .post("https://api.4lapy.ru/api/v1/users/customer/auth")
-                .then()
-                .log().all()
-                .extract().body();
-    }
-
-
-    //тест работает
-    //добавить генерацию айдишников для товаров через option
-    @Test
-    void addToFav() {
-        String body = "{\"skuId\": \"1063633\"}";
-        GetToken getToken = new GetToken();
-        String token = "Bearer " + getToken.ResponseToken().getToken().getAccessToken();
-
-        given()
-                .body(body)
-                .header("Authorization", token)
-                .log().all()
-                .when()
-                .post("https://api.4lapy.ru/api/v1/favourites/favourites")
-                .then()
-                .log().all()
-                .extract().body();
-    }
-
-    @Test
-    void getFav() {
-        GetToken getToken = new GetToken();
-        String token = getToken.ResponseToken().getToken().getAccessToken();
-
-
-        AddToFav addToFav= new AddToFav();
-        String bookId = addToFav.addtoFav(token).getSkuId();
-
-
-        given()
-                .header("Authorization", "Bearer " + token)
-                .log().all()
-                .when()
-                .get("https://api.4lapy.ru/api/v1/favourites/favourites")
-                .then()
-                .log().all()
-                .extract().body();
-    }
-
-    @Test
-    void deleteFromFav() {
-        GetToken getToken = new GetToken();
-        String token = getToken.ResponseToken().getToken().getAccessToken();
-
-
-        AddToFav addToFav= new AddToFav();
-        String bookId = addToFav.addtoFav(token).getSkuId();
-
-
-        given()
-                .header("Authorization", "Bearer " + token)
-                .log().all()
-                .when()
-                .delete("https://api.4lapy.ru/api/v1/favourites/favourites/" + bookId)
                 .then()
                 .log().all()
                 .extract().body();

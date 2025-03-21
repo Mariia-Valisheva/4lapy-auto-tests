@@ -1,8 +1,8 @@
-package model;
+package models;
 
 import lombok.Data;
 
 @Data
-public class FavModel {
+public class ItemsCollection {
     private String skuId, dateAdd;
 }

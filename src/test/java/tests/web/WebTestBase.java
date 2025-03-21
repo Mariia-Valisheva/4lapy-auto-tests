@@ -6,12 +6,13 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attachments;
 import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
+import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import pages.MainPage;
 
-public class UiTestBase {
+public class WebTestBase {
 
     MainPage mainPage = new MainPage();
 
@@ -23,6 +24,8 @@ public class UiTestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browser_version");
         Configuration.holdBrowserOpen = true;
+
+        RestAssured.baseURI = "https://api.4lapy.ru";
         //String SELENOID_HOST = System.getProperty("selenoid_host");
         //Configuration.remote = "https://user1:1234@" + SELENOID_HOST + "/wd/hub";
 

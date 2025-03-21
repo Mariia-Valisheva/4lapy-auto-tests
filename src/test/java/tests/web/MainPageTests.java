@@ -9,7 +9,7 @@ import utils.TestGeneratedData;
 
 @Tag("SMOKE")
 @DisplayName("Тесты на главной странице")
-public class MainPageTests extends UiTestBase {
+public class MainPageTests extends WebTestBase {
 
     MainPage mainPage = new MainPage();
     SearchResultPage searchResultPage = new SearchResultPage();
