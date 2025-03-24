@@ -1,38 +1,48 @@
 package tests.api;
 
 import api.AddToFavouriteWithoutLogin;
-import api.GetAuthInfo;
+import api.GetFavouritesWithoutLogin;
+import helpers.TestVariables;
+import io.qameta.allure.*;
+import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import models.AddToFavouriteRequest;
 import models.AddToFavouriteResponse;
 import models.GetFavouriteResponse;
 import org.assertj.core.api.SoftAssertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import specs.BaseResponseSpec;
-import utils.TestGeneratedData;
+import specs.RequestSpec;
+import specs.ResponseSpec;
+import utils.TestData;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
-import static specs.BaseRequestSpec.commonRequestSpec;
 
+@Owner("Мария Валишева")
+@Tag("API")
+@Epic("Разработка функционала Избранное и Корзина")
+@DisplayName("Тесты на работу с избранным")
 public class FavouritesTests extends ApiTestBase {
-    TestGeneratedData testGeneratedData = new TestGeneratedData();
 
+    TestData testData = new TestData();
+    TestVariables testVariables = new TestVariables();
+    String token = testVariables.getToken();
+    RequestSpecification requestSpecification = new RequestSpec().baseRequestAuthSpec(token);
+    AddToFavouriteRequest addToFavouriteRequest = new AddToFavouriteRequest(testData.skuId);
+
+    @Story("Функционал работы с избранным")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Тест на добавление товара в избранное")
     @Test
     void addToFavouriteWithoutLoginTest() {
-
-        GetAuthInfo getAuthInfo = new GetAuthInfo();
-        String token = "Bearer " + getAuthInfo.ResponseToken().getToken().getAccessToken();
-
-        AddToFavouriteRequest addToFavouriteRequest = new AddToFavouriteRequest(testGeneratedData.skuId);
-
-        ResponseSpecification responseSpecification = new BaseResponseSpec().commonResponseSpec(201);
+        ResponseSpecification responseSpecification = new ResponseSpec().commonResponseSpec(201);
 
         AddToFavouriteResponse addToFavouriteResponse = step("Добавляем товар в избранное", () ->
-                given(commonRequestSpec)
+                given(requestSpecification)
                         .body(addToFavouriteRequest)
-                        .header("Authorization", token)
                         .when()
                         .post(favPath)
                         .then()
@@ -43,53 +53,71 @@ public class FavouritesTests extends ApiTestBase {
         {
             SoftAssertions.assertSoftly(
                     softAssertions -> {
-                        assertThat(addToFavouriteResponse.getSkuId()).isEqualTo(testGeneratedData.skuId);
+                        assertThat(addToFavouriteResponse.getSkuId()).isEqualTo(testData.skuId);
                         assertThat(addToFavouriteResponse.getDateAdd()).isNotEmpty();
                     });
         });
     }
 
-
+    @Story("Функционал работы с избранным")
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Тест на получение товаров в избранном")
     @Test
     void getFavouritesWithoutLoginTest() {
-        GetAuthInfo getToken = new GetAuthInfo();
-        String token = getToken.ResponseToken().getToken().getAccessToken();
-
-        AddToFavouriteRequest addToFavouriteRequest = new AddToFavouriteRequest(testGeneratedData.skuId);
-
         AddToFavouriteWithoutLogin addToFavouriteWithoutLogin = new AddToFavouriteWithoutLogin();
         addToFavouriteWithoutLogin.addToFavouriteWithoutLogin(token, addToFavouriteRequest);
 
-        ResponseSpecification responseSpecification = new BaseResponseSpec().commonResponseSpec(200);
+        ResponseSpecification responseSpecification = new ResponseSpec().commonResponseSpec(200);
 
-        GetFavouriteResponse getFavouriteResponse =
-        given(commonRequestSpec)
-                .header("Authorization", "Bearer " + token)
-                .when()
-                .get(favPath)
-                .then()
-                .spec(responseSpecification)
-                .extract().as(GetFavouriteResponse.class);
+        GetFavouriteResponse getFavouriteResponse = step("Запрашиваем данные об избранном по токену", () ->
+                given(requestSpecification)
+                        .when()
+                        .get(favPath)
+                        .then()
+                        .spec(responseSpecification)
+                        .extract().as(GetFavouriteResponse.class)
+        );
+
+        step("Проверяем данные в избранном", () ->
+        {
+            SoftAssertions.assertSoftly(
+                    softAssertions -> {
+                        assertThat(getFavouriteResponse.getItems().get(0).getSkuId()).isEqualTo(testData.skuId);
+                        assertThat(getFavouriteResponse.getItems()).hasSize(1);
+                        assertThat(getFavouriteResponse.getMeta().getCount()).isEqualTo(1);
+                    });
+        });
     }
 
-
+    @Story("Функционал работы с избранным")
+    @Severity(SeverityLevel.MINOR)
+    @DisplayName("Тест на удаление товара из избранного")
     @Test
     void deleteFromFavouritesWithoutLoginTest() {
-        GetAuthInfo getToken = new GetAuthInfo();
-        String token = getToken.ResponseToken().getToken().getAccessToken();
+        AddToFavouriteWithoutLogin addToFavouriteWithoutLogin = new AddToFavouriteWithoutLogin();
+        addToFavouriteWithoutLogin.addToFavouriteWithoutLogin(token, addToFavouriteRequest);
 
+        ResponseSpecification responseSpecification = new ResponseSpec().commonResponseSpec(204);
 
-        AddToFavouriteWithoutLogin addToFav = new AddToFavouriteWithoutLogin();
-        //String bookId = addToFav.addtoFavouriteWithoutLogin(token).getSkuId();
+        step("Удаляем товар из избранного", () ->
 
-
-        given()
-                .header("Authorization", "Bearer " + token)
-                .log().all()
-                .when()
-                // .delete("https://api.4lapy.ru/api/v1/favourites/favourites/" + bookId)
-                .then();
-        // .log().all()
-        // .extract().body();
+                given(requestSpecification)
+                        .when()
+                        .delete(favPath + "/" + testData.skuId)
+                        .then()
+                        .spec(responseSpecification)
+                        .extract().body()
+        );
+        step("Проверяем по токену, что товаров в избранном не осталось", () ->
+        {
+            GetFavouritesWithoutLogin getFavouritesWithoutLoginFinal = new GetFavouritesWithoutLogin();
+            SoftAssertions.assertSoftly(
+                    softAssertions -> {
+                        assertThat(getFavouritesWithoutLoginFinal.getFavouritesWithoutLogin(token)
+                                .getItems()).hasSize(0);
+                        assertThat(getFavouritesWithoutLoginFinal.getFavouritesWithoutLogin(token)
+                                .getMeta().getCount()).isEqualTo(0);
+                    });
+        });
     }
 }

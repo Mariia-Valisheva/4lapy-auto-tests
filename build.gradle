@@ -64,8 +64,14 @@ tasks.withType(Test) {
     }
 }
 
-task fourlapy_smoke(type: Test) {
+task fourlapy_webtests(type: Test) {
     useJUnitPlatform {
-        includeTags("SMOKE")
+        includeTags("WEB")
+    }
+}
+
+task fourlapy_apitests(type: Test) {
+    useJUnitPlatform {
+        includeTags("API")
     }
 }

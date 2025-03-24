@@ -54,5 +54,4 @@ public class Attachments {
                 + getVideoUrl()
                 + "' type='video/mp4'></video></body></html>";
     }
-
 }

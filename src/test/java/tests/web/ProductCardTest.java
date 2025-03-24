@@ -4,16 +4,16 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.ProductCardPage;
-import utils.TestGeneratedData;
+import utils.TestData;
 
 
+@DisplayName("Тесты на проверку карточки товара")
 public class ProductCardTest extends WebTestBase {
 
     MainPage mainPage = new MainPage();
     ProductCardPage productCardPage = new ProductCardPage();
-    TestGeneratedData generatedData = new TestGeneratedData();
+    TestData generatedData = new TestData();
 
-//готово
     @DisplayName("Тест на отображение отзывов у товара")
     @Test
     void checkReviewTest() {

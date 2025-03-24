@@ -5,7 +5,7 @@ import io.restassured.specification.ResponseSpecification;
 
 import static io.restassured.filter.log.LogDetail.ALL;
 
-public class BaseResponseSpec {
+public class ResponseSpec {
 
     public ResponseSpecification commonResponseSpec(int expectedStatusCode) {
         return new ResponseSpecBuilder()

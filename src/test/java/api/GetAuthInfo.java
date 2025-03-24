@@ -1,19 +1,17 @@
 package api;
 
-import io.qameta.allure.Step;
 import io.restassured.specification.ResponseSpecification;
 import models.GetTokenResponse;
-import specs.BaseResponseSpec;
+import specs.ResponseSpec;
 import tests.api.ApiTestBase;
 
 import static io.restassured.RestAssured.given;
-import static specs.BaseRequestSpec.commonRequestSpec;
+import static specs.RequestSpec.commonRequestSpec;
 
 public class GetAuthInfo extends ApiTestBase {
 
-   @Step("Получаем информацию для аутентификации")
     public GetTokenResponse ResponseToken() {
-        ResponseSpecification responseSpecification = new BaseResponseSpec().commonResponseSpec(200);
+        ResponseSpecification responseSpecification = new ResponseSpec().commonResponseSpec(200);
 
         return given(commonRequestSpec)
                 .post(authPath)
