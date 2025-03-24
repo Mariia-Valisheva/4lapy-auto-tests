@@ -11,7 +11,7 @@ import tests.api.ApiTestBase;
 import static io.restassured.RestAssured.given;
 
 public class GetCustomerCardWithoutLogin extends ApiTestBase {
-    @Step("Получаем данные о корзине пользователя без регистрации")
+    @Step("Получаем данные о корзине пользователя")
     public GetCustomerCardResponse getCustomerCardWithoutLogin(String token, String basketId, String customerId) {
 
         RequestSpecification requestSpecification = new RequestSpec().extendedRequestAuthSpec(token);

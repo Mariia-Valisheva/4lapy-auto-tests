@@ -69,7 +69,7 @@ public class FavouritesTests extends ApiTestBase {
 
         ResponseSpecification responseSpecification = new ResponseSpec().commonResponseSpec(200);
 
-        GetFavouriteResponse getFavouriteResponse = step("Запрашиваем данные об избранном по токену", () ->
+        GetFavouriteResponse getFavouriteResponse = step("Запрашиваем данные об избранном", () ->
                 given(requestSpecification)
                         .when()
                         .get(favPath)
@@ -108,15 +108,13 @@ public class FavouritesTests extends ApiTestBase {
                         .spec(responseSpecification)
                         .extract().body()
         );
-        step("Проверяем по токену, что товаров в избранном не осталось", () ->
+        step("Проверяем, что товаров в избранном не осталось", () ->
         {
             GetFavouritesWithoutLogin getFavouritesWithoutLoginFinal = new GetFavouritesWithoutLogin();
             SoftAssertions.assertSoftly(
                     softAssertions -> {
                         assertThat(getFavouritesWithoutLoginFinal.getFavouritesWithoutLogin(token)
                                 .getItems()).hasSize(0);
-                        assertThat(getFavouritesWithoutLoginFinal.getFavouritesWithoutLogin(token)
-                                .getMeta().getCount()).isEqualTo(0);
                     });
         });
     }

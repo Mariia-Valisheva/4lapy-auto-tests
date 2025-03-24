@@ -1,12 +1,16 @@
 package tests.web;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.*;
 import utils.TestData;
 
 
-
+@Owner("Мария Валишева")
+@Tag("WEB")
+@Epic("Разработка функционала главной страницы")
 @DisplayName("Тесты на главной странице")
 public class MainPageTests extends WebTestBase {
 
@@ -15,6 +19,8 @@ public class MainPageTests extends WebTestBase {
     TestData testData = new TestData();
 
 
+    @Story("Функционал поиска на главной странице")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Тест на поиск по ключевому слову")
     @Test
     void searchByKeyWordsTest() {
@@ -26,6 +32,8 @@ public class MainPageTests extends WebTestBase {
                         + testData.keyWord + "» мы нашли", 1);
     }
 
+    @Story("Функционал поиска на главной странице")
+    @Severity(SeverityLevel.TRIVIAL)
     @DisplayName("Тест на поиск по каталогу")
     @Test
     void searchInCatalogTest() {
@@ -37,6 +45,8 @@ public class MainPageTests extends WebTestBase {
                 .checkCatalogSearchResult(testData.searchWord);
     }
 
+    @Story("Функционал выбора локации")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Тест на выбор города на главной странице")
     @Test
     void chooseCityTest() {

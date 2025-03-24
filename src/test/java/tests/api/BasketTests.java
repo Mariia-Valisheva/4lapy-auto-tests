@@ -49,7 +49,7 @@ public class BasketTests extends ApiTestBase {
 
         ResponseSpecification responseSpecification = new ResponseSpec().commonResponseSpec(204);
 
-        step("Добавляем товар в корзину пользователю без регистрации", () ->
+        step("Добавляем товар в корзину пользователю", () ->
                 given(requestSpecification)
                         .queryParam("customerId", customerId)
                         .when()

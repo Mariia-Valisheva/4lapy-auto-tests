@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 
 public class AddToFavouriteWithoutLogin extends ApiTestBase {
 
-    @Step("Добавляем товар в избранное без регистраци")
+    @Step("Добавляем товар в избранное")
     public AddToFavouriteResponse addToFavouriteWithoutLogin(String token, AddToFavouriteRequest addToFavouriteRequest) {
 
         RequestSpecification requestSpecification = new RequestSpec().baseRequestAuthSpec(token);

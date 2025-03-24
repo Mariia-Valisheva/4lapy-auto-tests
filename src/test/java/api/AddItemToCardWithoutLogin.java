@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 
 public class AddItemToCardWithoutLogin extends ApiTestBase {
 
-    @Step("Добавляем товар в корзину пользователю без регистрации")
+    @Step("Добавляем товар в корзину пользователю")
     public void addItemToCardWithoutLogin(String token, AddToCardRequest addToCardRequest, String basketId, String customerId) {
 
         RequestSpecification requestSpecification = new RequestSpec().extendedRequestAuthSpec(token);

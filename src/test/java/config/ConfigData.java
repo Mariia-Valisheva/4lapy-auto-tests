@@ -33,6 +33,4 @@ public interface ConfigData extends Config {
     @Key("remoteUrl")
     String remoteUrl();
 
-    @Key("baseUri")
-    String baseUri();
 }
