@@ -36,7 +36,7 @@ public class WebDriverConfig {
 
         } else {
             if (environment.equals("remote")) {
-                Configuration.baseUrl = configData.baseUrl().toString();
+                Configuration.baseUrl = configData.baseUrl();
                 Configuration.browser = configData.browser();
                 Configuration.browserSize = configData.browserSize();
                 Configuration.browserVersion = configData.browserVersion();
@@ -54,7 +54,7 @@ public class WebDriverConfig {
                 ));
                 Configuration.browserCapabilities = capabilities;
             }
-            Configuration.baseUrl = configData.baseUrl().toString();
+            Configuration.baseUrl = configData.baseUrl();
             Configuration.browser = configData.browser();
             Configuration.browserSize = configData.browserSize();
             Configuration.browserVersion = configData.browserVersion();

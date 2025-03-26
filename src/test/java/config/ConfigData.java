@@ -2,7 +2,6 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-import java.net.URL;
 
 import static com.codeborne.selenide.Browsers.CHROME;
 
@@ -16,7 +15,7 @@ public interface ConfigData extends Config {
 
     @Key("baseUrl")
     @DefaultValue("https://4lapy.ru")
-    URL baseUrl();
+    String baseUrl();
 
     @Key("browser")
     @DefaultValue(CHROME)
