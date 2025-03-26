@@ -54,21 +54,31 @@ CI/CD проходит через Jenkins, тесты запускаются н�
 - [x] Проверка на просмотр содержимого корзины
 - [x] Проверка на просмотр содержимого в избранном
 
-## :label: Сборка в [Jenkins](https://jenkins.autotests.cloud/job/four-lapy-tests/):
+## :label: Web сборка в [Jenkins](https://jenkins.autotests.cloud/job/four-lapy-tests/):
 
-![Jenkins Screenshot](screenshots/jenkinsscreen.png)
+![Jenkins Screenshot](screenshots/web.png)
 
 **Сборку можно собрать с параметрами:**
 
-* <code>BROWSER</code> – браузер для выполнения тестов. По-умолчанию:<code>chrome</code>
-* <code>BROWSER_SIZE</code> – размер окна браузера. По-умолчанию:<code>1440x932</code>
+* <code>BROWSER</code> – браузер для выполнения тестов
+* <code>BROWSER_SIZE</code> – размер окна браузера
 * <code>BROWSER_VERSION</code> – версия браузера (в зависимости от выбранного браузера)
 * <code>TEST_SUIT</code> – запускаемый тестовый набор
 * <code>SELENOID_HOST</code> – адрес удаленного сервера для запуска тестов
+* <code>BASE_URL</code> – вызываемый урл
 * <code>ENVIRONMENT</code> – окружение для запуска тестов
 * <code>COMMENT</code> – комментарий для отчета в тг
 
-### Команда для запуска сборки из терминала:
+## :label: Api сборка в [Jenkins](https://jenkins.autotests.cloud/job/four-lapy-tests/):
+![Jenkins Screenshot](screenshots/api.png)
+
+**Сборку можно собрать с параметрами:**
+* <code>TEST_SUIT</code> – запускаемый тестовый набор
+* <code>ENVIRONMENT</code> – окружение для запуска тестов
+* <code>COMMENT</code> – комментарий для отчета в тг
+* <code>BASE_URI</code> – адрес вызываемого сервера
+
+### Команды для запуска сборки из терминала:
 
 **Сборка на удаленном Selenoid с параметрами, указанными в конфигурационном файле:**
 
@@ -90,27 +100,19 @@ gradle clean fourlapy_apitests
 
 ## :page_facing_up: [Allure отчет](https://jenkins.autotests.cloud/job/four-lapy-tests/3/allure/) сформируется для каждой сборки:
 
-**Основная информация:**
+![Allure Screenshot](screenshots/web_result.png)
 
-![Allure Screenshot](screenshots/allure1.png)
-
-**Тест-кейсы в сборке:**
-
-![Allure Screenshot](screenshots/allure2.png)
-
-**Шаги для каждого тест-кейса, а также доп информация (скриншоты, видео, логи, page source):**
-
-![Allure Screenshot](screenshots/allure3.png)
+![Allure Screenshot](screenshots/api_result.png)
 
 ### После выполнения сборки в телеграм-бот придет отчет:
 
 <p align="center">
-<img title="Tg Report" src="screenshots/tg.png" width="850" height="650"  alt="screenshot">   
+<img title="Tg Report" src="screenshots/tgscreen.png" width="850" height="650"  alt="screenshot">   
 </p>
 
 ### Для каждого теста сохранится скриншот и видео с результатом:
 
-![Test Screenshot](screenshots/testscreen.png)
+![Test Screenshot](screenshots/17871b8f09d8859f.png)
 
 <p align="center">
 <img title="Selenoid Video" src="screenshots/testvideo.gif" width="850" height="650"  alt="video">   
