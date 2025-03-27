@@ -23,6 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Owner("Мария Валишева")
 @Tag("API")
+@Feature("Избранное")
 @Epic("Разработка функционала Избранное и Корзина")
 @DisplayName("Тесты на работу с избранным")
 public class FavouritesTests extends ApiTestBase {

@@ -24,6 +24,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Owner("Мария Валишева")
 @Tag("API")
+@Feature("Корзина")
 @Epic("Разработка функционала Избранное и Корзина")
 @DisplayName("Тесты на работу с корзиной")
 public class BasketTests extends ApiTestBase {

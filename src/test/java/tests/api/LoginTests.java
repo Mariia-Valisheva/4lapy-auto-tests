@@ -18,6 +18,7 @@ import static specs.RequestSpec.commonRequestSpec;
 
 @Owner("Мария Валишева")
 @Tag("API")
+@Feature("Авторизация")
 @Epic("Разработка функционала Авторизации в личном кабинете")
 @DisplayName("Тесты на авторизацию")
 public class LoginTests extends ApiTestBase {
