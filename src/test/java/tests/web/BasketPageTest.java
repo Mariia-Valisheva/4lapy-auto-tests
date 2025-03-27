@@ -13,6 +13,7 @@ import utils.TestData;
 
 @Owner("Мария Валишева")
 @Tag("WEB")
+@Feature("Корзина")
 @Epic("Разработка функционала Корзины")
 @DisplayName("Тестирование корзины")
 public class BasketPageTest extends WebTestBase {

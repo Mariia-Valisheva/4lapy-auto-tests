@@ -19,6 +19,7 @@ public class MainPageTests extends WebTestBase {
     TestData testData = new TestData();
 
 
+    @Feature("Поиск")
     @Story("Функционал поиска на главной странице")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Тест на поиск по ключевому слову")
@@ -32,6 +33,7 @@ public class MainPageTests extends WebTestBase {
                         + testData.keyWord + "» мы нашли", 1);
     }
 
+    @Feature("Поиск")
     @Story("Функционал поиска на главной странице")
     @Severity(SeverityLevel.TRIVIAL)
     @DisplayName("Тест на поиск по каталогу")
@@ -45,6 +47,7 @@ public class MainPageTests extends WebTestBase {
                 .checkCatalogSearchResult(testData.searchWord);
     }
 
+    @Feature("Локация")
     @Story("Функционал выбора локации")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Тест на выбор города на главной странице")

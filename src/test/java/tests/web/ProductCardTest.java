@@ -10,6 +10,7 @@ import utils.TestData;
 
 @Owner("Мария Валишева")
 @Tag("WEB")
+@Feature("Отзывы")
 @Epic("Разработка функционала Карточка товара")
 @DisplayName("Тесты на проверку карточки товара")
 public class ProductCardTest extends WebTestBase {

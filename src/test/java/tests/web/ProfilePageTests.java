@@ -11,6 +11,7 @@ import utils.TestData;
 
 @Owner("Мария Валишева")
 @Tag("WEB")
+@Feature("Авторизация")
 @Epic("Разработка функционала авторизации")
 @DisplayName("Тестирование личного кабинета")
 public class ProfilePageTests extends WebTestBase {
