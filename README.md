@@ -28,10 +28,15 @@
 <a href="https://aerokube.com/selenoid/"><img src="logos/selenoidLogo.png" width="50" height="50"  alt="Selenoid"/></a>
 <a href="https://allurereport.org/"><img src="logos/allurerepLogo.png" width="50" height="50"  alt="AllureReports"/></a>
 <a href="https://www.jenkins.io/"><img src="logos/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
+<a href="https://rest-assured.io/"><img src="logos/RestAssured.png" width="50" height="50"  alt="Jenkins"/></a>  
+<a href="https://qameta.io/"><img src="logos/AllureTestOps.svg" width="50" height="50"  alt="Jenkins"/></a>  
 </p>
 
 Тесты написаны на языке Java с использованием фреймворков Selenide, JUnit5 и системы сборки Gradle. В api-тестах
 используется библиотека Rest Assured. Для параметризации сборки используется библиотека Owner.
+
+В качестве TMS системы настроена интеграция с Allure TestOps, куда также добавлены ручные тест-кейсы. 
+
 CI/CD проходит через Jenkins, тесты запускаются на Selenoid. Тестовая отчетность формируется в Allure Reports. После
 завершения прогона отправляются уведомления с помощью бота в Telegram.
 
@@ -53,6 +58,15 @@ CI/CD проходит через Jenkins, тесты запускаются н�
 - [x] Проверка добавления/удаления товара из избранного
 - [x] Проверка на просмотр содержимого корзины
 - [x] Проверка на просмотр содержимого в избранном
+
+## :writing_hand: Интеграция с Allure TestOps и ручные тест-кейсы:
+### Web-тесты
+![Jenkins Screenshot](screenshots/web_testops.png)
+Ручные тест-кейсы отмечены статусом "Черновик"
+
+### Api-тесты:
+![Jenkins Screenshot](screenshots/api_testops.png)
+
 
 ## :label: Web сборка в [Jenkins](https://jenkins.autotests.cloud/job/four-lapy-tests/):
 
